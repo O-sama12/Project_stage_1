@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # LOAD DATA
 # ============================================
 
-df = pd.read_csv("crop_yield_data_2021_2024.csv")
+df = pd.read_csv("crop_yield_data_2021_2025.csv")
 
 # ============================================
 # FEATURE ENGINEERING
@@ -132,3 +132,4 @@ plt.figure(figsize=(10, 5))
 plt.barh(X.columns, result.importances_mean)
 plt.title("Feature Importance")
 plt.show()
+
