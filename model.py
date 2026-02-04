@@ -10,7 +10,7 @@ from sklearn.metrics import (
 )
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("crop_yield_data_2021_2025.csv")
+df = pd.read_csv("crop_yield_data_2021_2025_geo_region.csv")
 
 # Separate features and target
 X = df.drop(columns=["Yield"])
@@ -18,6 +18,13 @@ y = df["Yield"]
 
 # Encode categorical variables
 X = pd.get_dummies(X, drop_first=True)
+
+# Verifying list of geo features included
+geo_features = [
+    c for c in X.columns
+    if "Latitude" in c or "Longitude" in c or "Region_" in c
+]
+print("Geo features used:", geo_features)
 
 
 X_train, X_test, y_train, y_test = train_test_split(
