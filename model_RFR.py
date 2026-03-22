@@ -11,7 +11,7 @@ from sklearn.metrics import (
 import matplotlib.pyplot as plt
 
 # Load dataset
-df = pd.read_csv("crop_yield_data_2021_2025_geo_region.csv")
+df = pd.read_csv("crop_yield_data_1997_to_2025_geo_region.csv")
 
 # Separate features and target
 X = df.drop(columns=["Yield"])
